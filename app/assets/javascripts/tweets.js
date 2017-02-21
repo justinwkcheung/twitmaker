@@ -9,7 +9,8 @@ $(document).on('ready', function() {
     $.ajax({
       url: $(this).attr('action'),
       method: $(this).attr('method'),
-      data: $(this).serialize()
+      data: $(this).serialize(),
+      dataType: 'json'
     }).done(function(responseData) {
       console.log("Came back successfully");
       console.log(responseData);

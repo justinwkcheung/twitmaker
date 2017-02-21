@@ -15,6 +15,7 @@ class TweetsController < ApplicationController
       <p>#{@tweet.message}</p>
       <time>Feb 21,  8:36 PM</time>
     </li>".html_safe }
+        format.json { render json: @tweet }
       end
     else
       if @tweet.save
