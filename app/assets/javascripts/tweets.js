@@ -10,15 +10,15 @@ $(document).on('ready', function() {
       url: $(this).attr('action'),
       method: $(this).attr('method'),
       data: $(this).serialize(),
-      dataType: 'json'
+      // dataType: 'json'
     }).done(function(responseData) {
       console.log("Came back successfully");
       console.log(responseData);
       $('.tweets').prepend(responseData);
+      $('#create-tweet').prop('disabled', false);
 
     }).fail(function(responseData) {
       console.log("failed");
-
 
     }).always(function(responseData) {
       console.log("this always should happen");
